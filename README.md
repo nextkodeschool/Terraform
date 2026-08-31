@@ -86,3 +86,15 @@ For Exercise 4, use the same environment variable file used for deployment:
 ```bash
 terraform destroy -var-file="dev.tfvars"
 ```
+
+---
+
+## ✨ Learn With Us
+
+> ### 🚀 Start your cloud journey with NextKodeSchool
+>
+> Join our live online sessions to learn Terraform and cloud technologies. Contact us to know when the next batch begins.
+
+| 🌐 Visit us | 📞 Call us |
+| --- | --- |
+| [**nextkodeschool.com**](https://www.nextkodeschool.com) | [**+91 9493322788**](tel:+919493322788) · [**+91 7036227775**](tel:+917036227775) |
