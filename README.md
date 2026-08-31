@@ -12,6 +12,7 @@ The exercises build progressively from a single EC2 instance to reusable modules
 | [Exercise 2](exercise2/README.md) | Input variables, variable files, outputs | One EC2 instance and one S3 bucket |
 | [Exercise 3](exercise3/README.md) | Reusable modules and S3 remote state | Two EC2 instances and one S3 bucket |
 | [Exercise 4](exercise4/README.md) | Environment-specific variable files and resource naming | Two EC2 instances and one S3 bucket per environment |
+| [Exercise 5](exercise5/README.md) | EC2 user data and automated website deployment | Two Apache web servers and one S3 bucket per environment |
 
 ## Learning path
 
@@ -23,7 +24,19 @@ Exercise 2: Use variables and create EC2 + S3
 Exercise 3: Reuse EC2 and S3 modules
         ↓
 Exercise 4: Deploy the modules for dev, qa, and prod
+        ↓
+Exercise 5: Deploy an Apache website with EC2 user data
 ```
+
+## Exercise 5 key points
+
+Exercise 5 extends Exercise 4 by deploying the Chilling Cafe website automatically on both EC2 instances.
+
+- Terraform reads `website.sh` with `file("${path.module}/website.sh")` and sends it as EC2 `user_data`.
+- The script installs Apache, downloads the website template, and copies it to `/var/www/html/` during instance startup.
+- The reusable EC2 module runs the same deployment for both `web01` and `web02`.
+- The selected security group must allow inbound HTTP traffic on port `80`, and the Ubuntu instances need internet access to download packages.
+- Exercise 5 uses its own S3 state key, keeping its remote state separate from Exercise 4.
 
 ## Prerequisites
 
@@ -71,7 +84,7 @@ terraform plan
 terraform apply
 ```
 
-Exercises 3 and 4 use an S3 backend for Terraform state. Create the configured backend bucket before running `terraform init` for either exercise.
+Exercises 3, 4, and 5 use an S3 backend for Terraform state. Create the configured backend bucket before running `terraform init` for these exercises.
 
 ## Clean up
 
@@ -81,7 +94,7 @@ Destroy resources after completing an exercise to avoid AWS charges:
 terraform destroy
 ```
 
-For Exercise 4, use the same environment variable file used for deployment:
+For Exercises 4 and 5, use the same environment variable file used for deployment:
 
 ```bash
 terraform destroy -var-file="dev.tfvars"
