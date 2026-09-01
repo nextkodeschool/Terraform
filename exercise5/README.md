@@ -12,7 +12,7 @@ It creates:
 
 ## Directory structure
 
-```text
+```c#
 exercise5/
 ├── backend.tf
 ├── provider.tf
