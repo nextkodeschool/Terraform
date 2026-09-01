@@ -1,0 +1,8 @@
+environment   = "qa"
+bucket_name   = "devopsbatchjuly2026nks"
+bucket2_name  = "terraformnks2026"
+aws_region    = "us-east-1"
+ami_id        = "ami-0b6d9d3d33ba97d99"
+instance_type = "t3.micro"
+key_name      = "ecs-vm-key"
+ec2_sg        = "sg-02eebdc31e2f8ad66"
