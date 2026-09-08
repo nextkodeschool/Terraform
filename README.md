@@ -1,4 +1,4 @@
-# Terraform July Batch
+# Terraform July Batch 
 
 This repository contains hands-on Terraform exercises for learning how to provision AWS infrastructure with Infrastructure as Code (IaC).
 
