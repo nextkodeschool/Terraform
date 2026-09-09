@@ -99,6 +99,7 @@ For Exercises 4 and 5, use the same environment variable file used for deploymen
 ```bash
 terraform destroy -var-file="dev.tfvars"
 ```
+> Note: use --auto-approve while running commands using script
 
 ---
 
@@ -110,4 +111,4 @@ terraform destroy -var-file="dev.tfvars"
 
 | 🌐 Visit us | 📞 Call us |
 | --- | --- |
-| [**nextkodeschool.com**](https://www.nextkodeschool.com) | [**+91 9493322788**](tel:+919493322788) - [**+91 7036227775**](tel:+917036227775) |
+| [**nextkodeschool.com**](https://www.nextkodeschool.com) | [**+91 9493322788**](tel:+919493322788) - [**+91 7036227775**](tel:+917036227775) | 
