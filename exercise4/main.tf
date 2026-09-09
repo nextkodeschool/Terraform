@@ -7,9 +7,8 @@ module "web01" {
   instance_type = var.instance_type
   key_name      = var.key_name
   ec2_sg        = var.ec2_sg
-  instance_name = "web01"
+  instance_name = "webserver01"
   environment   = var.environment
-
 }
 
 module "web02" {
@@ -20,7 +19,7 @@ module "web02" {
   instance_type = var.instance_type
   key_name      = var.key_name
   ec2_sg        = var.ec2_sg
-  instance_name = "web02"
+  instance_name = "webserver02"
   environment   = var.environment
 }
 
