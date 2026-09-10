@@ -43,6 +43,9 @@ jobs:
         run: terraform plan -input=false -var-file="dev.tfvars"
 
       - name: Apply infrastructure changes
+        run: terraform apply -input=false -var-file="dev.tfvars" -auto-approve        
+
+      - name: Delete infrastructure changes
         run: terraform destroy -input=false -var-file="dev.tfvars" -auto-approve           
                   
          
